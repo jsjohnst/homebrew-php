@@ -13,8 +13,6 @@ class Php71Mailparse < AbstractPhp71Extension
   def install
     Dir.chdir "mailparse-#{version}" unless build.head?
 
-    ENV.universal_binary if build.universal?
-
     safe_phpize
     system "./configure", "--prefix=#{prefix}",
                           phpconfig
